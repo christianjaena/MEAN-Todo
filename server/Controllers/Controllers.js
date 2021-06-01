@@ -1,4 +1,4 @@
-const SampleSchema = require('../Models/Model');
+const SampleSchema = require('../models/Model');
 
 function getController() { }
 
