@@ -8,13 +8,13 @@ const {
 	updateController,
 	deleteController,
 	deleteByIdController,
-} = require('../Controllers/Controller.js');
+} = require('../controllers/TodoControllers.js');
 
-route.get('/', getController);
+route.get('/todos', getController);
 
 route.get('/:id', getByIdController);
 
-route.post('/', postController);
+route.post('/todos', postController);
 
 route.put('/:id', updateController);
 
