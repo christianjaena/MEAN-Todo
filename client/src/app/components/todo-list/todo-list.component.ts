@@ -10,7 +10,8 @@ import { Todo } from './../../interfaces/Todo';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-	todoList?: Todo[];
+  todoList?: Todo[];
+  buttonActionText: string = 'Add Todo';
   constructor(private todosService: TodosService) {}
 
   ngOnInit() {
@@ -18,6 +19,20 @@ export class TodoListComponent implements OnInit {
   }
 
   getTodos() {
-    this.todosService.getTodos().subscribe((todos: Todo[]) => this.todoList = todos);
+    this.todosService
+      .getTodos()
+      .subscribe((todos: Todo[]) => (this.todoList = todos));
+  }
+
+  deleteTodo(id: string) {
+    this.todosService
+      .deleteTodo(id)
+      .subscribe((deletedTodo) => console.log(deletedTodo));
+  }
+
+  addTodo(description: string) {
+    this.todosService
+      .addTodo({ description } as Todo)
+      .subscribe((newTodo) => this.todoList?.push(newTodo));
   }
 }

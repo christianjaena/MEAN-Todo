@@ -12,6 +12,7 @@ function getByIdController(req, res) {
 
 function postController(req, res) {
 	const { description } = req.body;
+	console.log(description)
 	const newTodoInput = { description };
 	const newTodo = new Todo(newTodoInput);
 	newTodo

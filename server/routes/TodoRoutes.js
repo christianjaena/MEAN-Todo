@@ -12,14 +12,14 @@ const {
 
 route.get('/todos', getController);
 
-route.get('/:id', getByIdController);
+route.get('/todos/:id', getByIdController);
 
 route.post('/todos', postController);
 
-route.put('/:id', updateController);
+route.put('/todos/:id', updateController);
 
-route.delete('/', deleteController);
+route.delete('/todos', deleteController);
 
-route.delete('/:id', deleteByIdController);
+route.delete('/todos/:id', deleteByIdController);
 
 module.exports = route;
