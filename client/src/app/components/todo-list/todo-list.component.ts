@@ -10,7 +10,7 @@ import { Todo } from './../../interfaces/Todo';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-  todoList?: Todo[];
+  todoList: Todo[] = [];
   buttonActionText: string = 'Add Todo';
   constructor(private todosService: TodosService) {}
 
@@ -27,7 +27,12 @@ export class TodoListComponent implements OnInit {
   deleteTodo(id: string) {
     this.todosService
       .deleteTodo(id)
-      .subscribe((deletedTodo) => console.log(deletedTodo));
+      .subscribe(
+        (deletedTodo) =>
+          (this.todoList = this.todoList.filter(
+            (todo) => todo._id !== deletedTodo._id
+          ))
+      );
   }
 
   addTodo(description: string) {

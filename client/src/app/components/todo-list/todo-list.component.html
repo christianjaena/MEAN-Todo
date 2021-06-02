@@ -1,6 +1,7 @@
-<app-input-form [buttonAction]="buttonActionText"
-	(submitInput)="addTodo($event)"
-></app-input-form>
+<app-add-todo-input
+  [buttonAction]="buttonActionText"
+  (submitInput)="addTodo($event)"
+></app-add-todo-input>
 <ul *ngFor="let todo of todoList">
   <li>
     <h1>{{ todo.description }}</h1>

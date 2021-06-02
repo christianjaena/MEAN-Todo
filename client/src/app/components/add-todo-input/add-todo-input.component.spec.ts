@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { InputFormComponent } from './input-form.component';
+import { AddTodoInputComponent } from './add-todo-input.component';
 
-describe('InputFormComponent', () => {
-  let component: InputFormComponent;
-  let fixture: ComponentFixture<InputFormComponent>;
+describe('AddTodoInputComponent', () => {
+  let component: AddTodoInputComponent;
+  let fixture: ComponentFixture<AddTodoInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputFormComponent ]
+      declarations: [ AddTodoInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputFormComponent);
+    fixture = TestBed.createComponent(AddTodoInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

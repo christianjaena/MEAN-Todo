@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-input-form',
-  templateUrl: './input-form.component.html',
-  styleUrls: ['./input-form.component.css']
+  selector: 'app-add-todo-input',
+  templateUrl: './add-todo-input.component.html',
+  styleUrls: ['./add-todo-input.component.css']
 })
-export class InputFormComponent implements OnInit {
+export class AddTodoInputComponent implements OnInit {
 	@Input() buttonAction: string = "Click";
 	@Output() submitInput = new EventEmitter<string>();
 	inputDescription?: string = ''

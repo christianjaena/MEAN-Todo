@@ -12,7 +12,6 @@ function getByIdController(req, res) {
 
 function postController(req, res) {
 	const { description } = req.body;
-	console.log(description)
 	const newTodoInput = { description };
 	const newTodo = new Todo(newTodoInput);
 	newTodo
@@ -25,7 +24,13 @@ function updateController() {}
 
 function deleteController() {}
 
-function deleteByIdController() {}
+function deleteByIdController(req, res) {
+	const id = req.params.id;
+
+	Todo.findByIdAndDelete(id)
+		.then(result => res.status(200).json(result))
+		.catch(err => res.status(400).json(err.message));
+}
 
 module.exports = {
 	getController,
