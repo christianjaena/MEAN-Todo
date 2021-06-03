@@ -4,7 +4,13 @@
 ></app-add-todo-input>
 <ul *ngFor="let todo of todoList">
   <li>
-    <h1>{{ todo.description }}</h1>
+    <div>
+      <a routerLink="/todos/{{ todo._id }}">
+        <h1>
+          {{ todo.description }}
+        </h1>
+      </a>
+      <button (click)="deleteTodo(todo._id)">Delete</button>
+    </div>
   </li>
-  <button (click)="deleteTodo(todo._id)">Delete</button>
 </ul>

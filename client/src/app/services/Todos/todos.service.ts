@@ -26,4 +26,8 @@ export class TodosService {
   addTodo(todoDescription: Todo): Observable<Todo> {
     return this.http.post<Todo>(this.url, todoDescription, httpOptions);
   }
+
+  getTodo(id: string): Observable<Todo> {
+    return this.http.get<Todo>(`${this.url}/${id}`);
+  }
 }

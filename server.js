@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 const mongoDBURI = require('./mongoDB-connection');
 
 const Routes = require('./server/routes/TodoRoutes');
+
 // ** SERVER AND DATABASE CONNECTION ** //
 mongoose
 	.connect(mongoDBURI, {
@@ -19,7 +20,7 @@ mongoose
 	.then(() => {
 		console.log('MongoDB Connected');
 
-		// Start server as the DB connection is successful
+		// Starts server only after the DB connection is successful
 		app.listen(PORT, error => {
 			if (error) throw error;
 			console.log(`Server listening at port ${PORT}`);
@@ -30,7 +31,6 @@ mongoose
 // ** MIDDLEWARES ** //
 
 app.use(cors())
-
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

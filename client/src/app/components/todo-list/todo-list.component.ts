@@ -11,6 +11,7 @@ import { Todo } from './../../interfaces/Todo';
 })
 export class TodoListComponent implements OnInit {
   todoList: Todo[] = [];
+  isUpdatingTodo: boolean = false;
   buttonActionText: string = 'Add Todo';
   constructor(private todosService: TodosService) {}
 
@@ -40,4 +41,11 @@ export class TodoListComponent implements OnInit {
       .addTodo({ description } as Todo)
       .subscribe((newTodo) => this.todoList?.push(newTodo));
   }
+
+  updateTodo() {
+    this.isUpdatingTodo = !this.isUpdatingTodo;
+  }
+	
+	save() {
+	}
 }

@@ -7,7 +7,10 @@ function getController(req, res) {
 }
 
 function getByIdController(req, res) {
-	res.status(200).json('hi');
+	const id = req.params.id;
+	Todo.findById(id)
+		.then(result => res.status(200).json(result))
+		.catch(err => res.status(400).json(err.message));
 }
 
 function postController(req, res) {

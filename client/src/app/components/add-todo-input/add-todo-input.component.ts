@@ -3,22 +3,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-add-todo-input',
   templateUrl: './add-todo-input.component.html',
-  styleUrls: ['./add-todo-input.component.css']
+  styleUrls: ['./add-todo-input.component.css'],
 })
 export class AddTodoInputComponent implements OnInit {
-	@Input() buttonAction: string = "Click";
-	@Output() submitInput = new EventEmitter<string>();
-	inputDescription?: string = ''
+  @Input() buttonAction: string = 'Click';
+  @Output() submitInput = new EventEmitter<string>();
+  inputDescription: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit() {
+    if (this.inputDescription !== '') {
+      this.submitInput.emit(this.inputDescription);
+      this.inputDescription = '';
+    }
   }
-
-	onSubmit() {
-		this.submitInput.emit(this.inputDescription)
-		this.inputDescription = ''
-	}
-
-
 }
