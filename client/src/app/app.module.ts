@@ -1,3 +1,4 @@
+import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,7 +12,7 @@ import { AddTodoInputComponent } from './components/add-todo-input/add-todo-inpu
 import { TodosService } from './services/Todos/todos.service';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent, AddTodoInputComponent],
+  declarations: [AppComponent, TodoListComponent, AddTodoInputComponent, TodoDetailsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [TodosService],
   bootstrap: [AppComponent],

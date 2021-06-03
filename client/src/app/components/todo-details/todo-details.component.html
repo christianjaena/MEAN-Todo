@@ -1,3 +1,5 @@
-<p>
-	{{todo?.description}}
-</p>
+<div>
+  <input [(ngModel)]="todo.description" />
+</div>
+<button (click)="save()">Save</button>
+<button (click)="goBack()">Back</button>

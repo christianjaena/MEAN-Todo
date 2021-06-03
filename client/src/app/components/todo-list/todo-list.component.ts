@@ -45,7 +45,9 @@ export class TodoListComponent implements OnInit {
   updateTodo() {
     this.isUpdatingTodo = !this.isUpdatingTodo;
   }
-	
-	save() {
-	}
+
+  deleteAll() {
+    this.todosService.deleteAllTodo().subscribe();
+    this.todoList = [];
+  }
 }

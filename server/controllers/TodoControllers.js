@@ -23,9 +23,19 @@ function postController(req, res) {
 		.catch(err => res.status(400).json(err.message));
 }
 
-function updateController() {}
+function updateController(req, res) {
+	const updatedTodo = req.body;
 
-function deleteController() {}
+	Todo.findByIdAndUpdate(updatedTodo._id, updatedTodo)
+		.then(result => res.status(200).json(result))
+		.catch(err => res.status(400).json(err.message));
+}
+
+function deleteController(req, res) {
+	Todo.deleteMany()
+		.then(() => res.status(200))
+		.catch(err => res.status(400).json(err.message));
+}
 
 function deleteByIdController(req, res) {
 	const id = req.params.id;

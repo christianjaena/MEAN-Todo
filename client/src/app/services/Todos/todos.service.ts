@@ -30,4 +30,12 @@ export class TodosService {
   getTodo(id: string): Observable<Todo> {
     return this.http.get<Todo>(`${this.url}/${id}`);
   }
+
+  updateTodo(todo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`${this.url}/${todo._id}`, todo, httpOptions);
+  }
+
+	deleteAllTodo() {
+		return this.http.delete(this.url)
+	}
 }
